@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+
+// ignore: must_be_immutable
+class CustomFormTextField extends StatelessWidget {
+  CustomFormTextField(
+      {this.hintText, this.onChanged, this.obscureText = false});
+  Function(String)? onChanged;
+  String? hintText;
+
+  bool? obscureText;
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      obscureText: obscureText!,
+      onChanged: onChanged,
+      decoration: InputDecoration(
+        hintText: hintText,
+        hintStyle: TextStyle(
+          color: Colors.blueGrey,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.blueGrey,
+          ),
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.black,
+          ),
+        ),
+      ),
+    );
+  }
+}
